@@ -13,26 +13,6 @@ import { JhipsterSampleAppNg2EntityModule } from './entities/entity.module';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
-import { routing } from './app.routing';
-// App is our top level component
-import { App } from './app.component';
-import { AppState, InternalStateType } from './app.service';
-import { GlobalState } from './global.state';
-import { NgaModule } from './theme/nga.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PagesModule } from './pages/pages.module';
-
-// Application wide providers
-const APP_PROVIDERS = [
-    AppState,
-    GlobalState
-];
-export type StoreType = {
-    state: InternalStateType,
-    restoreInputValues: () => void,
-    disposeOldHosts: () => void
-};
-
 import {
     JhiMainComponent,
     LayoutRoutingModule,
@@ -53,11 +33,7 @@ import {
         JhipsterSampleAppNg2HomeModule,
         JhipsterSampleAppNg2AdminModule,
         JhipsterSampleAppNg2AccountModule,
-        JhipsterSampleAppNg2EntityModule,
-        NgaModule.forRoot(),
-        NgbModule.forRoot(),
-        PagesModule,
-        // routing
+        JhipsterSampleAppNg2EntityModule
     ],
     declarations: [
         JhiMainComponent,
@@ -65,22 +41,14 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent,
-        App
+        FooterComponent
     ],
     providers: [
         ProfileService,
         customHttpProvider(),
         PaginationConfig,
-        UserRouteAccessService,
-        APP_PROVIDERS
+        UserRouteAccessService
     ],
-    bootstrap: [
-        // JhiMainComponent,
-         App
-    ]
+    bootstrap: [ JhiMainComponent ]
 })
-export class JhipsterSampleAppNg2AppModule {
-    constructor(public appState: AppState) {
-    }
-}
+export class JhipsterSampleAppNg2AppModule {}
