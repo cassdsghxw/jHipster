@@ -8,4 +8,6 @@ if (module['hot']) {
     module['hot'].accept();
 }
 
-platformBrowserDynamic().bootstrapModule(JhipsterSampleAppNg2AppModule);
+platformBrowserDynamic().bootstrapModule(JhipsterSampleAppNg2AppModule)
+.then((success) => console.log(`Application started`))
+.catch((err) => console.error(err));
