@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "order",
+            "otherEntityName": "order",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "customer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "telMain",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161016121722",
+    "service": "serviceClass",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "pagination",
+    "searchEngine": false
+}

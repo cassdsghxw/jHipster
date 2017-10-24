@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ncs.iframe5.sample.monolith.generated",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.7.0",
+    "baseName": "IconnectSampleAppMonolith",
+    "packageName": "com.ncs.iframe5.sample.monolith.generated",
+    "packageFolder": "com/ncs/iframe5/sample/monolith/generated",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "131b7d0a45cc951ad28e9f8293f65f433f575185",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "ic",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "iconnectShowCase": true,
+    "languages": [
+      "en",
+      "zh-cn"
+    ]
+  }
+}

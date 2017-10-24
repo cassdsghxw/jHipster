@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "orderAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "orderDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "noOfItems",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "paymentMode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },{
+            "fieldName": "orderRemarks",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161016121722",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "order",
+    "pagination": "pagination",
+    "searchEngine": false
+}

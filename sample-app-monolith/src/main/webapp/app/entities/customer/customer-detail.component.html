@@ -1,0 +1,37 @@
+
+<div *ngIf="customer">
+    <h2><span jhiTranslate="iconnectSampleAppMonolithApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+    <hr>
+    <ic-alert-error></ic-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.customer.name">Name</span></dt>
+        <dd>
+            <span>{{customer.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.customer.email">Email</span></dt>
+        <dd>
+            <span>{{customer.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.customer.telMain">Tel Main</span></dt>
+        <dd>
+            <span>{{customer.telMain}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.customer.address">Address</span></dt>
+        <dd>
+            <span>{{customer.address}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'customer/'+ customer.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,47 @@
+
+<div *ngIf="order">
+    <h2><span jhiTranslate="iconnectSampleAppMonolithApp.order.detail.title">Order</span> {{order.id}}</h2>
+    <hr>
+    <ic-alert-error></ic-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.orderAmount">Order Amount</span></dt>
+        <dd>
+            <span>{{order.orderAmount}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.orderDate">Order Date</span></dt>
+        <dd>
+            <span>{{order.orderDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.noOfItems">No Of Items</span></dt>
+        <dd>
+            <span>{{order.noOfItems}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.paymentMode">Payment Mode</span></dt>
+        <dd>
+            <span>{{order.paymentMode}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.orderRemarks">Order Remarks</span></dt>
+        <dd>
+            <span>{{order.orderRemarks}}</span>
+        </dd>
+        <dt><span jhiTranslate="iconnectSampleAppMonolithApp.order.customer">Customer</span></dt>
+        <dd>
+            <div *ngIf="order.customer">
+                <a [routerLink]="['/customer', order.customer?.id]">{{order.customer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'order/'+ order.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
